@@ -1,0 +1,95 @@
+/* Ana Yapı Profile ile benzer */
+.settings-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #09090b;
+    color: white;
+}
+
+.settings-content {
+    flex: 1;
+    padding: 40px 60px;
+    margin-left: 280px;
+    overflow-y: auto;
+}
+
+.settings-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.settings-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.settings-header p {
+    color: #a1a1aa;
+    margin: 5px 0 0 0;
+}
+
+.section-box {
+    margin-bottom: 50px;
+}
+
+.box-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #a1a1aa;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    background: #16181e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #8b5cf6;
+}
+
+.form-group input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.save-btn {
+    float: right;
+    padding: 14px 40px;
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    background: #7c3aed;
+}

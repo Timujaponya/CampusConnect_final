@@ -1,0 +1,360 @@
+/* src/pages/Dashboard.css */
+
+/* --- ANA YERLEŞİM (LAYOUT) --- */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #09090b;
+    color: white;
+    overflow: hidden;
+    /* Dış taşmaları engelle */
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px 50px;
+    margin-left: 280px;
+    /* Sidebar genişliği kadar boşluk */
+    overflow-y: auto;
+    /* Dikey kaydırma */
+    height: 100vh;
+    position: relative;
+}
+
+/* --- HEADER (ÜST KISIM) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    background: #1d1d24;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+/* --- ARAMA DROPDOWN STİLLERİ --- */
+.search-container {
+    position: relative;
+    /* Dropdown'ı buna göre konumlandıracağız */
+    z-index: 1000;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    /* Input'un tam altına */
+    left: 0;
+    width: 100%;
+    /* Arama çubuğu ile aynı genişlikte */
+    background-color: #16181e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    overflow-x: hidden;
+}
+
+.search-result-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.2s;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: rgba(139, 92, 246, 0.1);
+    /* Accent rengi */
+}
+
+.result-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+}
+
+.result-info h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: white;
+}
+
+.result-type {
+    font-size: 0.75rem;
+    color: #8b5cf6;
+    margin-top: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.search-bar:focus-within {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.95rem;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+
+.profile-section:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+/* --- BÖLÜM BAŞLIKLARI --- */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: white;
+}
+
+/* --- TAM EKRAN SLIDER YAPISI --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* Kart yüksekliği */
+    margin-bottom: 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Köşelerden taşmayı engelle */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.horizontal-scroll {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* Otomatik kilitleme */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar'ı Gizle */
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tekil Kart */
+.h-card {
+    flex: 0 0 100%;
+    /* Kart genişliği %100 */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    /* Koyu mor tema */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* İçeriği dikey ortala */
+    position: relative;
+    scroll-snap-align: center;
+    /* Merkeze kilitle */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+}
+
+.h-card:hover {
+    background: linear-gradient(135deg, #2e1065, #4338ca);
+}
+
+/* Kart İçeriği */
+.h-date {
+    font-size: 0.9rem;
+    color: #c7d2fe;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    width: fit-content;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.h-title {
+    font-size: 3rem;
+    /* Başlık büyük */
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    line-height: 1.1;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h-bg-icon {
+    position: absolute;
+    right: -30px;
+    bottom: -40px;
+    font-size: 15rem;
+    opacity: 0.1;
+    color: white;
+    transform: rotate(-10deg);
+    pointer-events: none;
+    /* Tıklamayı engelle */
+}
+
+/* Slider Butonları */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.slide-btn:hover {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slide-left {
+    left: 20px;
+}
+
+.slide-right {
+    right: 20px;
+}
+
+.grid-cards {
+    display: grid;
+    /* Eskisi: grid-template-columns: repeat(4, 1fr);  <- Bu sıkıştırıyordu */
+    /* Yenisi: Sığdığı kadar koy, sığmazsa alt satıra geç (Responsive) */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 25px;
+    padding-bottom: 50px; /* Alttan biraz boşluk bırak */
+}
+
+.glass-card {
+    background: #1d1d24;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 160px;
+}
+
+.glass-card:hover {
+    background: #272730;
+    border-color: #8b5cf6;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* İncele Butonu Temel Stili */
+.h-btn-inspect {
+    padding: 8px 24px;
+    background: white;
+    color: #09090b;
+    /* Koyu metin */
+    border-radius: 30px;
+    /* Tam yuvarlak köşeler */
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Yaylanma efektli geçiş */
+    border: 2px solid transparent;
+    /* Kenarlık payı */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover (Üzerine Gelince) Efekti */
+.h-btn-inspect:hover {
+    background: #8b5cf6;
+    /* Arka planı mor yap */
+    color: white;
+    /* Yazıyı beyaz yap */
+    transform: translateY(-3px) scale(1.05);
+    /* Hafifçe yukarı kaldır ve büyüt */
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+    /* Mor neon parlaması ekle */
+    border-color: transparent;
+}
+
+/* Tıklanma (Active) Efekti */
+.h-btn-inspect:active {
+    transform: translateY(-1px) scale(0.95);
+    /* Tıklayınca hafifçe küçülsün (Basma hissi) */
+    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+}

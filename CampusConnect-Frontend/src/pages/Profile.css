@@ -1,0 +1,158 @@
+/* src/pages/Profile.css */
+.profile-main-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #09090b;
+    color: white;
+}
+
+.profile-content {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    margin-left: 280px;
+}
+
+.cover-photo {
+    height: 250px;
+    background: linear-gradient(45deg, #2e1065, #4c1d95);
+    width: 100%;
+    position: relative;
+}
+
+.profile-info-container {
+    max-width: 1000px;
+    margin: -80px auto 40px auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.avatar-large {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #18181b;
+    border: 6px solid #09090b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.profile-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: white;
+}
+
+.profile-text p {
+    color: #a1a1aa;
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-profile-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto; /* Sağa yaslar */
+}
+
+.edit-profile-btn:hover {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.info-card {
+    background: #1d1d24;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title i {
+    color: #8b5cf6;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+}
+
+.club-list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.club-list-item:hover {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.club-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b5cf6;
+    font-size: 1.2rem;
+}

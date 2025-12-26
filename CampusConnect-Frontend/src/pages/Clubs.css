@@ -1,0 +1,123 @@
+/* Ana Layout */
+.clubs-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #09090b;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px 50px;
+    margin-left: 280px;
+}
+
+.clubs-header {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Grid Yapısı */
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Kulüp Kartı */
+.club-card {
+    background: #1d1d24;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+}
+
+.club-card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #8b5cf6;
+    margin-bottom: 20px;
+}
+
+.club-name {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.club-desc {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex: 1; /* Kart boylarını eşitlemek için */
+}
+
+/* İstatistikler (Opsiyonel) */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 15px 0;
+}
+
+.s-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.s-val {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.s-lbl {
+    font-size: 0.7rem;
+    color: #a1a1aa;
+    text-transform: uppercase;
+}
+
+.btn-join {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.btn-join:hover {
+    background: #7c3aed;
+}
+
+.btn-join:disabled {
+    background: #3f3f46;
+    cursor: not-allowed;
+    color: #a1a1aa;
+}

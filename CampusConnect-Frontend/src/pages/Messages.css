@@ -1,0 +1,203 @@
+/* Ana Layout */
+.messages-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #09090b;
+    color: white;
+}
+
+/* Chat Layout: Sidebar'dan sonra gelen alan */
+.chat-layout {
+    display: flex;
+    flex: 1;
+    margin-left: 280px; /* Sidebar genişliği */
+    height: 100%;
+}
+
+/* --- Konuşma Listesi (Sol Taraf) --- */
+.chat-list {
+    width: 320px;
+    background: #16181e;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.list-header {
+    padding: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.list-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.convo {
+    padding: 15px 20px;
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.convo:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.convo.active {
+    background: rgba(139, 92, 246, 0.1);
+    border-right: 3px solid #8b5cf6;
+}
+
+.convo-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    color: white;
+}
+
+.convo-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.convo-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.convo-last {
+    font-size: 0.8rem;
+    color: #a1a1aa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.convo-time {
+    font-size: 0.7rem;
+    color: #a1a1aa;
+}
+
+/* --- Sohbet Alanı (Sağ Taraf) --- */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #09090b;
+    position: relative;
+}
+
+.chat-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(24, 24, 30, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.chat-header-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.messages-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Mesaj Balonları */
+.msg {
+    max-width: 65%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.msg-in {
+    background: #27272a;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.msg-out {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(99, 102, 246, 0.2);
+}
+
+.msg-time {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
+
+/* Mesaj Yazma Alanı */
+.input-zone {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #16181e;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.msg-input {
+    flex: 1;
+    background: #09090b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 20px;
+    border-radius: 30px;
+    color: white;
+    outline: none;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.msg-input:focus {
+    border-color: #8b5cf6;
+}
+
+.send-btn-chat {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.send-btn-chat:hover {
+    transform: scale(1.1);
+}

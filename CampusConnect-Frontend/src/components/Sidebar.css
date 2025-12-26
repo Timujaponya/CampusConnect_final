@@ -1,0 +1,23 @@
+.sidebar {
+  width: var(--sidebar-width); /* Değişkenden alıyor */
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.logo { font-size: 1.4rem; font-weight: 700; margin-bottom: 40px; display: flex; align-items: center; gap: 10px; padding-left: 10px; color: white; text-decoration: none; }
+.logo i { color: var(--color-accent); font-size: 1.8rem; }
+.menu-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.2px; color: #52525b; margin: 0 0 10px 15px; font-weight: 700; }
+.nav-link { display: flex; align-items: center; gap: 12px; padding: 12px 15px; color: var(--color-text-muted); text-decoration: none; border-radius: 12px; transition: 0.2s; font-weight: 500; margin-bottom: 4px; }
+.nav-link:hover { color: white; background: rgba(255, 255, 255, 0.03); }
+.nav-link.active { background: linear-gradient(90deg, rgba(139, 92, 246, 0.15) 0%, transparent 100%); color: var(--color-accent); border-left: 3px solid var(--color-accent); border-radius: 0 12px 12px 0; }
+.nav-link i { font-size: 1.3rem; }
